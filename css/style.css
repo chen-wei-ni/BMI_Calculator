@@ -264,6 +264,7 @@
 
 .bmi_record {
   background-color: #f3f2e9;
+  min-height: 54vh;
 }
 
 .bmi_record .main {
