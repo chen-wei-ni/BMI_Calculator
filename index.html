@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>BMI</title>
+</head>
+<body>
+    <div class="bmi_type_area">
+        <div class="inputArea">
+            <div class="icon">
+                <img src="images/BMICLogo.png" alt="">
+            </div>
+            <div class="bodysize">
+                <div class="height_input">
+                    <p>身高 cm</p>
+                    <input type="text" class="height" placeholder="請輸入身高">
+                </div>
+                    <div class="weight_input">
+                    <p>體重 kg</p>
+                    <input type="text" class="weight" placeholder="請輸入身高">
+                    </div>
+            </div>
+            <input type="button" class="result_btn" value="看結果">
+            <div class="result_value"></div>
+            <!-- <input class="delete_btn delete" type="button" value=""> -->
+        </div>
+    </div>
+    <div class="bmi_record">
+        <div class="main">
+            <h3>BMI 紀錄</h3>
+            <div class="each_record"></div>            
+        </div>
+    </div>
+    <footer>
+        <div>
+            <img src="images/BMICLogo2.png">
+        </div>
+    </footer>
+    <script src="js/anime.min.js"></script>
+    <script src="js/all.js"></script>
+</body>
+</html>

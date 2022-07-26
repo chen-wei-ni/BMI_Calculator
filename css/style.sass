@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap')
+*
+    margin: 0
+    box-sizing: border-box
+    font-family: 'Noto Sans TC', sans-serif
+
+@mixin size($w,$h:$w)
+    width: $w
+    height: $h
+$mainColor: #FFD366
+$colorLight: #31BAF9
+$colorNormal: #86D73E
+$colorOverWeight: #FF982D
+$colorMildObesity: #FF6C02
+$colorModerateObesity: #ff4502
+$colorSevereObesity: #FF1200
+
+.bmi_type_area
+    background-color: #424242
+    display: grid
+    justify-content: center
+    align-items: center
+    +size(100%,300px)
+    .inputArea
+        width: 1000px
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        .bodysize
+            p
+                color: $mainColor
+                margin-bottom: .25rem
+                font-size: .9rem
+            input
+                background-color: rgba(#fff,0.4)
+                border: 2px solid $mainColor
+                border-radius: 5px
+                font-size: 16px
+                appearance: none
+                outline: none
+                padding: .25rem
+                &::placeholder
+                    color: rgba(#fff,0.6)
+        .weight_input
+            margin-top: 1rem
+        .result_btn
+            +size(123px)
+            border-radius: 50%
+            border: none
+            background-color: $mainColor
+            color: #424242
+            cursor: pointer
+            transition: all .2s linear 
+            font-size: 1.2rem
+            font-weight: bold
+            letter-spacing: 1px
+            &:hover
+                box-shadow: 0 0 15px #feffbc
+                transform: scale(1.08)
+    
+
+.delete_btn
+    // display: none
+    +size(30px)
+    position: absolute
+    background-color: #fff
+.result_value
+    +size(123px)
+    position: relative    
+    h4
+        position: absolute
+        top: 2.5rem
+        right: -60%
+        font-size: 1.8rem
+        &.toolight
+            color: $colorLight
+        &.normal
+            color: $colorNormal
+            border: none
+        &.overweight
+            color: $colorOverWeight
+        &.mild
+            color: $colorMildObesity
+            right: -110%
+        &.moderate
+            color: $colorModerateObesity
+            right: -110%
+        &.sever
+            color: $colorSevereObesity
+            right: -110%
+.circle
+    +size(123px)
+    border-radius: 50%
+    position: absolute
+    background-color: transparent
+    font-size: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    span
+        display: block
+        font-weight: 100
+        font-size: .9rem
+    .restart
+        +size(30px)
+        display: block
+        background:  url('../images/icons_loop.png') center center no-repeat
+        position: absolute
+        right: -8px
+        bottom: 0
+        border-radius: 50%
+        border: 3px solid #424242
+        cursor: pointer
+        z-index: 20
+        animation: rotate 3s infinite linear both
+    @keyframes rotate
+        60%            
+            filter: brightness(120%) saturate(1.1)
+        100%
+            transform: rotate(360deg)
+.tooLight
+    border: 8px solid $colorLight
+    color: $colorLight
+    .restart_light
+        background-color: $colorLight
+.normal
+    border: 8px solid $colorNormal
+    color: $colorNormal
+    .restart_normal
+        background-color: $colorNormal
+.overWeight
+    border: 8px solid $colorOverWeight
+    color: $colorOverWeight
+    .restart_over
+        background-color: $colorOverWeight
+.mildObesity
+    border: 8px solid $colorMildObesity
+    color: $colorMildObesity
+    .restart_mild
+        background-color: $colorMildObesity
+.moderateObesity
+    border: 8px solid $colorModerateObesity
+    color: $colorModerateObesity
+    .restart_moderate
+        background-color: $colorModerateObesity
+.severeObesity
+    border: 8px solid $colorSevereObesity
+    color: $colorSevereObesity
+    .restart_sever
+        background-color: $colorSevereObesity
+
+// -----------------下半部--------------------------
+
+.bmi_record
+    background-color: #f3f2e9
+    .main
+        width: 960px
+        margin: 0 auto
+        padding: 2rem 0 5rem 0
+        h3
+            text-align: center
+            font-size: 1.5rem
+        .each_record
+            display: flex
+            flex-direction: column-reverse
+            margin-top: 1rem
+
+            .box
+                background: linear-gradient(90deg, #f5f5f5 0.05% , #fff 1%)
+                margin: 15px 0
+                padding: 1.2rem 1rem
+                box-shadow: 0 0 20px rgba(#656565,0.1)
+                transition: opacity 300ms ease, transform 500ms ease
+
+                &.record_light
+                    border-left: 10px solid $colorLight
+                &.record_normal
+                    border-left: 10px solid $colorNormal
+                &.record_overweight
+                    border-left: 10px solid $colorOverWeight
+                &.record_mild
+                    border-left: 10px solid $colorMildObesity
+                &.record_moderate
+                    border-left: 10px solid $colorModerateObesity
+                &.record_serve
+                    border-left: 10px solid $colorSevereObesity
+                .row
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    p
+                        font-size: 1.1rem
+                    span
+                        font-size: .2rem
+                        margin-right: .2rem
+                    .date
+                        font-size: .8rem
+footer
+    background-color: $mainColor
+    width: 100%
+    height: 100%
+    padding: 2rem 0
+    div
+        width: 80px
+        margin: 0 auto
+        text-align: center
+        padding: .5rem
+        img
+            width: 100%
+
+@media screen and ( max-width: 1000px )
+    .bmi_type_area 
+        width: 100%
+        .inputArea
+            width: 76vw
+    .bmi_record 
+        .main
+            width: 100%
+            padding: 2rem 1.5rem
+    .result_value 
+        h4
+            
+            &.moderate, &.mild, &.sever
+                right: -100%
+@media screen and ( max-width: 768px )
+    .bmi_type_area
+        display: block
+        height: 70vw
+        .inputArea
+            flex-direction: column
+            width: 100%
+            .icon
+                width: 100%
+                padding: 0.8rem              
+                background-color: rgba(#000,0.2)
+                img
+                    width: 12%
+            .bodysize
+                margin-top: 2rem
+            .result_btn
+                margin-top: 3rem
+                +size(120px,60px)
+                border-radius: 30px
+            .result_value
+                margin-top: 5%
+                transform: scale(1.1)
+@media screen and ( max-width: 640px )
+    .bmi_type_area
+        height: 85vw
+@media screen and ( max-width: 500px )
+    .bmi_type_area
+        height: 105vw
+    .bmi_record 
+        .main .each_record 
+            .box 
+                padding: .5rem
+                background: linear-gradient(180deg, #f5f5f5 0.05%, #fff 1%)
+                &.record_light
+                    border-left: none
+                    border-top: 10px solid $colorLight
+                &.record_normal
+                    border-left: none
+                    border-top: 10px solid $colorNormal
+                &.record_overweight
+                    border-left: none
+                    border-top: 10px solid $colorOverWeight
+                &.record_mild
+                    border-left: none
+                    border-top: 10px solid $colorMildObesity
+                &.record_moderate
+                    border-left: none
+                    border-top: 10px solid $colorModerateObesity
+                &.record_serve
+                    border-left: none
+                    border-top: 10px solid $colorSevereObesity
+                .row
+                    flex-direction: column
+                    p
+                        margin: .1rem 0
+                    .date
+                        font-size: .9rem
+@media screen and ( max-width: 380px )
+    .bmi_type_area
+        height: 110vw
+@media screen and ( max-width: 320px )
+    .bmi_type_area
+        height: 135vw

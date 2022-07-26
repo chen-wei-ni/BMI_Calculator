@@ -1,0 +1,487 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap");
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.bmi_type_area {
+  background-color: #424242;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+.bmi_type_area .inputArea {
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.bmi_type_area .inputArea .bodysize p {
+  color: #FFD366;
+  margin-bottom: .25rem;
+  font-size: .9rem;
+}
+
+.bmi_type_area .inputArea .bodysize input {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid #FFD366;
+  border-radius: 5px;
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  padding: .25rem;
+}
+
+.bmi_type_area .inputArea .bodysize input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bmi_type_area .inputArea .bodysize input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bmi_type_area .inputArea .bodysize input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bmi_type_area .inputArea .bodysize input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bmi_type_area .inputArea .weight_input {
+  margin-top: 1rem;
+}
+
+.bmi_type_area .inputArea .result_btn {
+  width: 123px;
+  height: 123px;
+  border-radius: 50%;
+  border: none;
+  background-color: #FFD366;
+  color: #424242;
+  cursor: pointer;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.bmi_type_area .inputArea .result_btn:hover {
+  -webkit-box-shadow: 0 0 15px #feffbc;
+          box-shadow: 0 0 15px #feffbc;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+.delete_btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: #fff;
+}
+
+.result_value {
+  width: 123px;
+  height: 123px;
+  position: relative;
+}
+
+.result_value h4 {
+  position: absolute;
+  top: 2.5rem;
+  right: -60%;
+  font-size: 1.8rem;
+}
+
+.result_value h4.toolight {
+  color: #31BAF9;
+}
+
+.result_value h4.normal {
+  color: #86D73E;
+  border: none;
+}
+
+.result_value h4.overweight {
+  color: #FF982D;
+}
+
+.result_value h4.mild {
+  color: #FF6C02;
+  right: -110%;
+}
+
+.result_value h4.moderate {
+  color: #ff4502;
+  right: -110%;
+}
+
+.result_value h4.sever {
+  color: #FF1200;
+  right: -110%;
+}
+
+.circle {
+  width: 123px;
+  height: 123px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: transparent;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.circle span {
+  display: block;
+  font-weight: 100;
+  font-size: .9rem;
+}
+
+.circle .restart {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: url("../images/icons_loop.png") center center no-repeat;
+  position: absolute;
+  right: -8px;
+  bottom: 0;
+  border-radius: 50%;
+  border: 3px solid #424242;
+  cursor: pointer;
+  z-index: 20;
+  -webkit-animation: rotate 3s infinite linear both;
+          animation: rotate 3s infinite linear both;
+}
+
+@-webkit-keyframes rotate {
+  60% {
+    -webkit-filter: brightness(120%) saturate(1.1);
+            filter: brightness(120%) saturate(1.1);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  60% {
+    -webkit-filter: brightness(120%) saturate(1.1);
+            filter: brightness(120%) saturate(1.1);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.tooLight {
+  border: 8px solid #31BAF9;
+  color: #31BAF9;
+}
+
+.tooLight .restart_light {
+  background-color: #31BAF9;
+}
+
+.normal {
+  border: 8px solid #86D73E;
+  color: #86D73E;
+}
+
+.normal .restart_normal {
+  background-color: #86D73E;
+}
+
+.overWeight {
+  border: 8px solid #FF982D;
+  color: #FF982D;
+}
+
+.overWeight .restart_over {
+  background-color: #FF982D;
+}
+
+.mildObesity {
+  border: 8px solid #FF6C02;
+  color: #FF6C02;
+}
+
+.mildObesity .restart_mild {
+  background-color: #FF6C02;
+}
+
+.moderateObesity {
+  border: 8px solid #ff4502;
+  color: #ff4502;
+}
+
+.moderateObesity .restart_moderate {
+  background-color: #ff4502;
+}
+
+.severeObesity {
+  border: 8px solid #FF1200;
+  color: #FF1200;
+}
+
+.severeObesity .restart_sever {
+  background-color: #FF1200;
+}
+
+.bmi_record {
+  background-color: #f3f2e9;
+}
+
+.bmi_record .main {
+  width: 960px;
+  margin: 0 auto;
+  padding: 2rem 0 5rem 0;
+}
+
+.bmi_record .main h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.bmi_record .main .each_record {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-top: 1rem;
+}
+
+.bmi_record .main .each_record .box {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.05%, #f5f5f5), color-stop(1%, #fff));
+  background: linear-gradient(90deg, #f5f5f5 0.05%, #fff 1%);
+  margin: 15px 0;
+  padding: 1.2rem 1rem;
+  -webkit-box-shadow: 0 0 20px rgba(101, 101, 101, 0.1);
+          box-shadow: 0 0 20px rgba(101, 101, 101, 0.1);
+  -webkit-transition: opacity 300ms ease, -webkit-transform 500ms ease;
+  transition: opacity 300ms ease, -webkit-transform 500ms ease;
+  transition: opacity 300ms ease, transform 500ms ease;
+  transition: opacity 300ms ease, transform 500ms ease, -webkit-transform 500ms ease;
+}
+
+.bmi_record .main .each_record .box.record_light {
+  border-left: 10px solid #31BAF9;
+}
+
+.bmi_record .main .each_record .box.record_normal {
+  border-left: 10px solid #86D73E;
+}
+
+.bmi_record .main .each_record .box.record_overweight {
+  border-left: 10px solid #FF982D;
+}
+
+.bmi_record .main .each_record .box.record_mild {
+  border-left: 10px solid #FF6C02;
+}
+
+.bmi_record .main .each_record .box.record_moderate {
+  border-left: 10px solid #ff4502;
+}
+
+.bmi_record .main .each_record .box.record_serve {
+  border-left: 10px solid #FF1200;
+}
+
+.bmi_record .main .each_record .box .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bmi_record .main .each_record .box .row p {
+  font-size: 1.1rem;
+}
+
+.bmi_record .main .each_record .box .row span {
+  font-size: .2rem;
+  margin-right: .2rem;
+}
+
+.bmi_record .main .each_record .box .row .date {
+  font-size: .8rem;
+}
+
+footer {
+  background-color: #FFD366;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+}
+
+footer div {
+  width: 80px;
+  margin: 0 auto;
+  text-align: center;
+  padding: .5rem;
+}
+
+footer div img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .bmi_type_area {
+    width: 100%;
+  }
+  .bmi_type_area .inputArea {
+    width: 76vw;
+  }
+  .bmi_record .main {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+  .result_value h4.moderate, .result_value h4.mild, .result_value h4.sever {
+    right: -100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bmi_type_area {
+    display: block;
+    height: 70vw;
+  }
+  .bmi_type_area .inputArea {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .bmi_type_area .inputArea .icon {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .bmi_type_area .inputArea .icon img {
+    width: 12%;
+  }
+  .bmi_type_area .inputArea .bodysize {
+    margin-top: 2rem;
+  }
+  .bmi_type_area .inputArea .result_btn {
+    margin-top: 3rem;
+    width: 120px;
+    height: 60px;
+    border-radius: 30px;
+  }
+  .bmi_type_area .inputArea .result_value {
+    margin-top: 5%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .bmi_type_area {
+    height: 85vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bmi_type_area {
+    height: 105vw;
+  }
+  .bmi_record .main .each_record .box {
+    padding: .5rem;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05%, #f5f5f5), color-stop(1%, #fff));
+    background: linear-gradient(180deg, #f5f5f5 0.05%, #fff 1%);
+  }
+  .bmi_record .main .each_record .box.record_light {
+    border-left: none;
+    border-top: 10px solid #31BAF9;
+  }
+  .bmi_record .main .each_record .box.record_normal {
+    border-left: none;
+    border-top: 10px solid #86D73E;
+  }
+  .bmi_record .main .each_record .box.record_overweight {
+    border-left: none;
+    border-top: 10px solid #FF982D;
+  }
+  .bmi_record .main .each_record .box.record_mild {
+    border-left: none;
+    border-top: 10px solid #FF6C02;
+  }
+  .bmi_record .main .each_record .box.record_moderate {
+    border-left: none;
+    border-top: 10px solid #ff4502;
+  }
+  .bmi_record .main .each_record .box.record_serve {
+    border-left: none;
+    border-top: 10px solid #FF1200;
+  }
+  .bmi_record .main .each_record .box .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .bmi_record .main .each_record .box .row p {
+    margin: .1rem 0;
+  }
+  .bmi_record .main .each_record .box .row .date {
+    font-size: .9rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .bmi_type_area {
+    height: 110vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .bmi_type_area {
+    height: 135vw;
+  }
+}
+/*# sourceMappingURL=style.css.map */
